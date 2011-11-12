@@ -18,9 +18,16 @@
 			// start on the contents bit
 			table = $("<" + settings.list_type + "></" + settings.list_type + ">");
 			
+			toc_id = 1;
+			
 			// get all the tags we're looking for
 			$(settings.header_tags.join (', ')).each (function () {
-				table.append ('<li>' + $(this).html() + '</li>');
+				table.append ('<li><a href="#toc_' + toc_id + '">' + $(this).html() + '</a></li>');
+				
+				// now add a anchore to each
+				$(this).html ('<a name="toc_' + toc_id + '"></a>' + $(this).html());
+				
+				toc_id++;
 			});
 			
 			$(this).append (table);
