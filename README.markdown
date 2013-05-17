@@ -11,7 +11,7 @@ Call the tableofcontents() function on the selector you wish to be filled with t
 
 There are a few arguments you can pass through to the function to make it better suited for your needs:
 
-    scope (default: body)
+    scope (default: 'body')
 	
 This defines where you want the table to be populated from. Usually "body" is a bad choice, so you may want to
 switch this to "#content", or "article". It's just another jQuery selector.
@@ -21,14 +21,14 @@ switch this to "#content", or "article". It's just another jQuery selector.
 This is an array of tags which you'd like to be considered as new sections of your content. If your content
 starts at a 'h2', you may want to redefine this without the h1.
 
-    list_type (default: ul)
+    list_type (default: 'ul')
 
 What should the list type of the table be? Depends on how you want to present the table.
 
-    exclude (default: $())
+    exclude (default: [])
 
 A list of DOM elements, or a jQuery collection, of elements you want to ignore whilst creating the table.
 
     empty (default: true)
 
-Should the list be emptied before the table is created, or should the table be appeneded?
+Should the div that the will hold the Table of Contents be emptied before adding the content?
